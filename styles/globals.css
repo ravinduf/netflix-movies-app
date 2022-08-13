@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* html, body, heading */
+@layer base {
+    body {
+        @apply bg-[hsl(0,0%,8%)] text-white;
+    }
+}
+
+/* custom classes */
+@layer components {
+    .headerLink {
+        @apply cursor-pointer text-sm font-light text-[hsl(0,0%,90%)]
+                transition duration-[0.4s] hover:text-[hsl(0,0%,70%)];
+    }
+}
