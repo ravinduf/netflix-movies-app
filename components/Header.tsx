@@ -1,8 +1,28 @@
 import { BellIcon, SearchIcon } from "@heroicons/react/solid"
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.screenY > 0) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+  
   return (
-    <header>
+    <header className={`${isScrolled && 'bg-[hsl(0,0%,8%)]'}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
 
         <img
