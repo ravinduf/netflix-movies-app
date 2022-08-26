@@ -36,6 +36,10 @@ const Login = () => {
           </label>
           <label></label>
         </div>
+
+        <button className="w-full rounded bg-[#e50914] py-3 font-semibold">
+          Sign In
+        </button>
       </form>
     </div>
   )
